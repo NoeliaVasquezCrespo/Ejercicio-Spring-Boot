@@ -1,0 +1,43 @@
+###
+GET http://localhost:8080/
+Accept: application/json
+
+###
+GET http://localhost:8080/profile
+Accept: application/json
+
+
+### Lista de actores
+GET http://localhost:8080/actor
+Accept: application/json
+
+
+### Ver información de un actor
+GET http://localhost:8080/actor/2
+Accept: application/json
+
+
+### Agregar un actor
+POST http://localhost:8080/actor
+Content-Type: application/json
+
+{
+    "first": "BEN",
+    "last": "PLATT",
+    "update": "2021-10-08 10:37:03"
+    
+}
+
+### Editar información de un actor
+PUT http://localhost:8080/actor/2
+Content-Type: application/json
+
+{
+    "first": "ZOE",
+    "last": "MURPHY",
+    "update": "2021-04-10 20:37:03"
+}
+
+### Eliminar información de un actor
+DELETE http://localhost:8080/actor/2
+Content-Type: application/json
