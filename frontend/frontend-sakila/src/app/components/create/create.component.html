@@ -1,0 +1,83 @@
+
+<nav class="navbar navbar-expand navbar-dark" id="menu" >
+    <a class="navbar-brand" style="color: #ffffff;" >Actores - BD Sakila</a>
+    <div class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a href="read" class="nav-link" >Lista de Actores</a> 
+      </li> 
+      <li class="nav-item">
+        <a href="create" class="nav-link">Agregar Actor</a>
+      </li>
+      </div>
+  
+  </nav>
+  
+  
+  <!---EDITAR ACTOR-->
+  
+  <div class="container" *ngIf="getparamid" >
+    <header>
+      <h1>Editar Información de actor </h1>
+    </header>
+  
+    <div style="width: 800px; margin: auto;" >
+      <form>
+        <div class="form-group" >
+          <label for="first_name" style="color: #000000; font-size: 20px;">Nombre</label>
+          <input type = "text" class="form-control" formControlName="first_name">
+        </div>
+  
+        <div class="form-group">
+          <label for="last_name" style="color: #000000; font-size: 20px;">Apellido </label>
+          <input type = "text" class="form-control" formControlName="last_name" >
+        </div>
+       
+        <div class="form-group" >
+            <label for="last_update" style="color: #000000; font-size: 20px;">Fecha y hora</label>
+            <input type = "text" class="form-control" formControlName="last_update">
+        </div>
+        
+
+        <div class="col-lg- mt-2" *ngIf="getparamid" >
+          <button class="btn" style="background-color: #0CC2BC;" >Editar</button>
+        </div>
+      </form>
+    </div>  
+  </div>  
+  
+  
+  <!---AGREGAR ACTOR-->
+  
+  <div class="container" *ngIf="!getparamid" >
+    <header>
+      <h1>Agregar ACTOR </h1>
+      <img src="https://www.nicepng.com/png/full/263-2633268_snap-check-mark-png-check-and-x-png.png" width="150" height="150"/>
+    </header>
+  
+    <div style="width: 500px; margin: auto;" >
+      <div class="submit-form" >
+        <div *ngIf="!isActorAdded">
+            <div class="form-group" >
+                <label for="first_name" style="color: #000000; font-size: 20px;">Nombre</label>
+                <input type = "text" class="form-control" formControlName="first_name">
+              </div>
+        
+              <div class="form-group">
+                <label for="last_name" style="color: #000000; font-size: 20px;">Apellido </label>
+                <input type = "text" class="form-control" formControlName="last_name" >
+              </div>
+             
+
+              <div class="form-group" >
+                  <label for="last_update" style="color: #000000; font-size: 20px;">Fecha y hora</label>
+                  <input type = "text" class="form-control" formControlName="last_update">
+              </div>
+  
+        <div class="col-lg- mt-2" *ngIf="!getparamid" >
+          <button class="btn btn-success" >Agregar</button>
+        </div>
+      </div>
+      </div>  
+    </div>  
+  </div>  
+  
